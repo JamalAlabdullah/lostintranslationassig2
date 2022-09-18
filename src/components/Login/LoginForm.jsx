@@ -1,24 +1,40 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {useForm} from 'react-hook-form';
 import {loginUser} from '../../api/user';
+import { storageSave } from '../../utils/storage';
+import {useNavigate} from 'react-router-dom';
+import { useUser } from '../../context/UserContext';
 
 const userNameConfig={required:true,minLength:3}
 
 const LoginForm = () => {
     const {register,handleSubmit,formState:{errors}} =useForm();
+    const {user, setUser} = useUser();
+    const navigate= useNavigate();
 
+    //local state
     const [loading, setLoading]= useState(false);
-   
-   
+    const [apiError, setApiError]= useState("");
+    // side effects / to redirect the user to translation page after to check it
+    useEffect(() => {
+     if(user!==null){
+       navigate('translation');
+
+     }
+    },[user, navigate])
+    // event handlers
     const onSubmit = async ({username}) => {
         setLoading(true);
-        const [error, user] = await loginUser(username)
-       console.log("error:",error);
-        console.log("user:", user);
-        setLoading(false);
+        const [error, userResponse] = await loginUser(username)
+        if(error!==null){setApiError(error)}
+        if(userResponse!==null ){
+            storageSave("Translation-user", userResponse)
+            setUser(userResponse)
+        }
+        setLoading(false)
        };
 
-        console.log(errors);
+     
 
         const errormessage = (() =>{
             if(!errors.username){return null}
@@ -48,6 +64,7 @@ return (
     <button type="submit" disabled={loading} className="btn btn-primary">LOG IN</button><br></br>
 
     {loading && <p className='loginLoading'>Logging in...</p>}<br></br>
+    {apiError && <p>{apiError}</p>}<br></br>
 
     </form>
 
