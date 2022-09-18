@@ -1,0 +1,67 @@
+.container{
+text-align: center;
+margin-top: 80px;
+}
+
+.image {
+    width:150px;
+     height:150px;
+    border-radius:70%;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.welcomeMessage{
+    margin-top: 55px;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.inputText{
+    margin-top: 50px;
+    font-size: small;
+    font-weight:100;
+    width: 215px;
+    border-right-width: 0;
+    border-top: 5;
+    border-left: 0; 
+    border-color: white;
+    padding: 8px;
+    border-radius: 20px;
+    padding-left: 15px;
+    border-bottom-color:darkgray; 
+}
+input::placeholder {
+    opacity: .5;
+    color:white;
+}
+
+:placeholder-shown{
+    background-color: #33296f;
+}
+
+
+.btn.btn-primary{
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-radius: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color:blueviolet;
+}
+
+.forgetPassword{
+    color: white;
+    
+}
+
+
+.requiredInput{
+    color: red;
+    font-size: small;
+}
+
+
+.loginLoading{
+    color: aliceblue;
+}

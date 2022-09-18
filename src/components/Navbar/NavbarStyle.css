@@ -1,0 +1,21 @@
+.logoImage{
+    width: 50px;
+    height: 50px;
+    border-radius:70%;
+ 
+  
+}
+
+.title{
+    color: aqua;
+  
+    
+}
+
+.nav-link{
+    color: aqua;
+}
+.navbar-nav{
+    margin-left: auto;
+}
+
