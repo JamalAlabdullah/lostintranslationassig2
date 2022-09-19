@@ -1,6 +1,6 @@
 const ProfileTranslationHistoryItem = ({ translation }) => {
     return (
-        <li>{ translation }</li>
+        <li className="list-group-item">{ translation }</li>
     )
 }
 export default ProfileTranslationHistoryItem

@@ -7,9 +7,10 @@ const ProfileTranslationHistory = ({ translations }) => {
     return (
         <section>
             <h4>Translation history</h4>
-            <ul>
+            <ul className="list-group list-group-flush">
                 { translationList }
             </ul>
+            <button type="button" className="btn btn-lg btn-primary" disabled>Primary button</button>
         </section>
     )
 }
