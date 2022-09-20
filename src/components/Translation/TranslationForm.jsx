@@ -7,7 +7,7 @@ import { STORAGE_KEY_USER } from "../../const/storageKey";
 import TranslationSignList from "./TranslationSignList"
 
 const TranslationForm = () => {
-    const [ signArr, setSignArr ] = useState([])
+    const [ letterArr, setLetterArr ] = useState([])
     const { register, handleSubmit, formState: { errors } } = useForm()
     const { user, setUser } = useUser()
 
@@ -28,10 +28,10 @@ const TranslationForm = () => {
         let arr = []
         for (let i = 0; i < toBeTranslated.length; i++) {
             const letter = toBeTranslated[i];
-            arr.push(`${letter}.png`)
+            arr.push(letter)
         }
 
-        setSignArr(arr);
+        setLetterArr(arr);
     }
     
     return (
@@ -57,7 +57,7 @@ const TranslationForm = () => {
                 <div className="card">
                     <div className="card-header">The results for your translation</div>
                         <div className="card-body">
-                            <TranslationSignList signArr={ signArr }/>
+                            <TranslationSignList letters={ letterArr }/>
                         </div>
                 </div>
             </div>

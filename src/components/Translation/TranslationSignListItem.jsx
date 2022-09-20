@@ -1,10 +1,10 @@
-const TranslationSignListItem = ({ sign }) => {
-    console.log(sign)
+const TranslationSignListItem = ({ letter }) => {
+    console.log(letter)
 
     return (
         <>
-            { sign !== " .png" && <img src={ `Images/${sign}` } alt={ `${sign}` } width="40" />}
-            { sign === " .png" && " " }
+            { letter !== " .png" && <img src={ `Images/${letter}.png` } alt={ `${letter}` } width="40" />}
+            { letter === " .png" && " " }
         </>
     )
 }

@@ -1,10 +1,10 @@
 import TranslationSignListItem from "./TranslationSignListItem"
 
-const TranslationSignList = ({ signArr }) => {
+const TranslationSignList = ({ letters }) => {
 
     return (
         <ul>
-            { signArr.map(sign => <TranslationSignListItem sign={ sign } />) }
+            { letters.map(letter => <TranslationSignListItem letter={ letter } />) }
         </ul>
     )
 }
