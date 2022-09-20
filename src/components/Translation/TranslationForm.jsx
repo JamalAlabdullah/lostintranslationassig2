@@ -11,8 +11,6 @@ const TranslationForm = () => {
         translationAdd(user, toBeTranslated)
 
         // send http request
-
-
     }
     
     return (
