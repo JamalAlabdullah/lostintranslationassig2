@@ -12,7 +12,7 @@ const TranslationForm = () => {
         <>
             <div className="container">
                 <h3 className="welcomeMessage"> Welcome to translation page</h3>
-                <p className="enterLable"> Enter the word or phrase you want to translate into a sign: </p>
+                <p className="enterLable"> Enter the word or phrase you want to translate into sign: </p>
             
                 {/*translate felt */}
                 <form onSubmit={ handleSubmit(onSubmit) }>
