@@ -28,9 +28,7 @@ const TranslationForm = () => {
         let arr = []
         for (let i = 0; i < toBeTranslated.length; i++) {
             const letter = toBeTranslated[i];
-            if (!(letter === " ")) {
-                arr.push(`${letter}.png`)
-            }
+            arr.push(`${letter}.png`)
         }
 
         setSignArr(arr);
@@ -67,9 +65,5 @@ const TranslationForm = () => {
     );
 
 }
-
-
-
-
 
 export default TranslationForm;
