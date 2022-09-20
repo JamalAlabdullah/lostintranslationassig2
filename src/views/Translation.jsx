@@ -13,4 +13,4 @@ const Translation = () => {
 
 
 
-export default Translation;
+export default withAuth(Translation);
