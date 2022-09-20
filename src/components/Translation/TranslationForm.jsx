@@ -4,12 +4,13 @@ import { useUser } from "../../context/UserContext"
 import { translationAdd } from "../../api/translate"
 import { storageSave } from "../../utils/storage";
 import { STORAGE_KEY_USER } from "../../const/storageKey";
+import TranslationSignList from "./TranslationSignList"
 
 const TranslationForm = () => {
     const [ signArr, setSignArr ] = useState([])
     const { register, handleSubmit, formState: { errors } } = useForm()
     const { user, setUser } = useUser()
-    
+
     const onSubmit = async ({ toBeTranslated }) => {
         const [error, updatedUser] = await translationAdd(user, toBeTranslated)
 
@@ -23,14 +24,16 @@ const TranslationForm = () => {
         setUser(updatedUser);
 
         console.log(toBeTranslated)
+
         let arr = []
         for (let i = 0; i < toBeTranslated.length; i++) {
             const letter = toBeTranslated[i];
-            arr.push(`${letter}.png`)
+            if (!(letter === " ")) {
+                arr.push(`${letter}.png`)
+            }
         }
+
         setSignArr(arr);
-        console.log("DEBUG", signArr)
-        
     }
     
     return (
@@ -40,7 +43,7 @@ const TranslationForm = () => {
                 <p className="enterLable"> Enter the word or phrase you want to translate into sign: </p>
             
                 {/*translate felt */}
-                <form onSubmit={ handleSubmit(onSubmit) }>
+                <form onSubmit={ handleSubmit(onSubmit) } >
                     <fieldset>
                         <label htmlFor="translation-notes">Input:</label>
                         <div className="input-group mb-3">
@@ -56,7 +59,7 @@ const TranslationForm = () => {
                 <div className="card">
                     <div className="card-header">The results for your translation</div>
                         <div className="card-body">
-                            { signArr.forEach((sign) => <img src={ sign }/>)}
+                            <TranslationSignList signArr={ signArr }/>
                         </div>
                 </div>
             </div>
