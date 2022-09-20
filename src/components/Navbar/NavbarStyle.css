@@ -7,15 +7,22 @@
 }
 
 .title{
-    color: aqua;
+    color:bisque;
   
     
 }
 
 .nav-link{
-    color: aqua;
+    color:bisque;
 }
 .navbar-nav{
     margin-left: auto;
+}
+
+
+.logedname{
+    color: chartreuse;
+    text-align: right;
+    margin-top: 8px;
 }
 
