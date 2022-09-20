@@ -1,0 +1,58 @@
+.container{
+    text-align: center;
+    width: 500px;
+    height: 500px;
+}
+
+
+.welcomeMessage{
+    margin-bottom:70px;
+    color: rgb(226, 43, 226);
+
+}
+
+
+.tranlateLable{
+  text-align: left;
+  color:white;
+}
+
+
+.form-control{
+    border-radius: 80px;
+    
+    background-color: rgb(226, 43, 226);
+}
+
+input::placeholder{
+    
+text-emphasis: 55px;
+}
+
+.btn{
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    background-color:blueviolet;
+    color: white;
+
+}
+
+
+
+.card{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    border-radius:4px;
+   
+}
+
+.card-header{
+    background-color:#c074c4 ;
+
+}
+
+.card-body{
+    background-color:#5e50ad ;
+    
+   
+}

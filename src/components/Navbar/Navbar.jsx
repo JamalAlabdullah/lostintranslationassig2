@@ -1,12 +1,16 @@
 import { Link, NavLink} from "react-router-dom";
 import React from "react";
+import { useUser } from "../../context/UserContext";
 
-const Navbar= ({user}) => {
+const Navbar= () => {
+
+
+  const {user} = useUser();
 
     return (
         <nav className="navbar navbar-expand-lg ">  
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/" >
+          <Link className="navbar-brand" to="/logout" >
           <img className="logoImage" src={"./images/logo.png"} alt="logo Lost In Translation" />
           </Link>
           <h6 className="title">Lost In Translation</h6>
@@ -25,50 +29,25 @@ const Navbar= ({user}) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <NavLink className="nav-link" aria-current="page" to="/">
-                Home
-              </NavLink>
-          
-              {!user &&(
+              {/**<NavLink className="nav-link" aria-current="page" to="/"> Home</NavLink> */} 
+             
+             { user !== null &&
               <React.Fragment>
-            
-              
-              </React.Fragment>)}
+              <NavLink className="nav-link " to="/translations">Translation</NavLink>
+              <NavLink className="nav-link " to="/profile">Profile</NavLink>
+              <NavLink className="nav-link " to="/logout">Logout</NavLink>
+              </React.Fragment>
+
+             }
 
 
-              {user &&(
-              <React.Fragment>
-              <NavLink className="nav-link " to="/translation">
-               {user.name}
-              </NavLink>
-
-              <NavLink className="nav-link " to="/logout">
-               Logout
-              </NavLink>
-
-              </React.Fragment>)}
 
             </div>
           </div>
         </div>
       </nav>
     );
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 export default Navbar;

@@ -4,6 +4,7 @@ import {loginUser} from '../../api/user';
 import { storageSave } from '../../utils/storage';
 import {useNavigate} from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
+import { STORAGE_KEY_USER } from '../../const/storageKey';
 
 const userNameConfig={required:true,minLength:3}
 
@@ -16,19 +17,21 @@ const LoginForm = () => {
     const [loading, setLoading]= useState(false);
     const [apiError, setApiError]= useState("");
     // side effects / to redirect the user to translation page after to check it
+    
     useEffect(() => {
      if(user!==null){
-       navigate('translation');
+       navigate('translations');
 
      }
     },[user, navigate])
+
     // event handlers
     const onSubmit = async ({username}) => {
         setLoading(true);
         const [error, userResponse] = await loginUser(username)
         if(error!==null){setApiError(error)}
         if(userResponse!==null ){
-            storageSave("Translation-user", userResponse)
+            storageSave(STORAGE_KEY_USER, userResponse)
             setUser(userResponse)
         }
         setLoading(false)
@@ -53,7 +56,7 @@ return (
     <form onSubmit={handleSubmit(onSubmit)}>
 
     <fieldset>
-    <label htmlFor='username'>Username: </label><br></br>
+    <label className="interUser" htmlFor='username'>Username </label><br></br>
     <input 
     className="inputText" 
     type="text"
@@ -68,7 +71,7 @@ return (
 
     </form>
 
-    <p className="forgetPassword">Forget Password? Reset</p>
+    <p className="forgetPassword">Forget Password? Reset</p><br></br>
    
 
 
