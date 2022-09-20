@@ -1,14 +1,15 @@
 import { useForm } from "react-hook-form"
+import { useState } from "react";
 import { useUser } from "../../context/UserContext"
 import { translationAdd } from "../../api/translate"
 import { storageSave } from "../../utils/storage";
 import { STORAGE_KEY_USER } from "../../const/storageKey";
 
 const TranslationForm = () => {
-
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const { user, setUser } = useUser();
-
+    const [ signArr, setSignArr ] = useState([])
+    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { user, setUser } = useUser()
+    
     const onSubmit = async ({ toBeTranslated }) => {
         const [error, updatedUser] = await translationAdd(user, toBeTranslated)
 
@@ -20,9 +21,16 @@ const TranslationForm = () => {
         storageSave(STORAGE_KEY_USER, updatedUser);
         // update context state
         setUser(updatedUser);
+
+        console.log(toBeTranslated)
+        let arr = []
+        for (let i = 0; i < toBeTranslated.length; i++) {
+            const letter = toBeTranslated[i];
+            arr.push(`${letter}.png`)
+        }
+        setSignArr(arr);
+        console.log("DEBUG", signArr)
         
-        console.log(error);
-        console.log(updatedUser);
     }
     
     return (
@@ -48,14 +56,11 @@ const TranslationForm = () => {
                 <div className="card">
                     <div className="card-header">The results for your translation</div>
                         <div className="card-body">
-                            <p className="card-text">Here should the result of translation be shown</p>
+                            { signArr.forEach((sign) => <img src={ sign }/>)}
                         </div>
                 </div>
             </div>
         </>
-      
-
-
     );
 
 }
