@@ -1,14 +1,18 @@
 import { useForm } from "react-hook-form"
+import { useUser } from "../../context/UserContext"
+import { translationAdd } from "../../api/translate"
 
 const TranslationForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const { user } = useUser();
 
     const onSubmit = ({ toBeTranslated }) => {
-        console.log(toBeTranslated);
+        translationAdd(user, toBeTranslated)
 
         // send http request
-        
+
+
     }
     
     return (

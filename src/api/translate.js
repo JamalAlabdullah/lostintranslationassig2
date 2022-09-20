@@ -2,7 +2,6 @@ import { createHeaders } from "."
 
 const apiUrl= process.env.REACT_APP_API_URL
 
-
 export const translationAdd = async (user, translation) => {
     try {
         const response = await fetch(`${apiUrl}/${user.id}`, {
@@ -14,7 +13,7 @@ export const translationAdd = async (user, translation) => {
         })
 
         if (!response.ok) {
-            throw new Error("Could update list of translations")
+            throw new Error("Could not update list of translations")
         }
 
         const result = await response.json();
