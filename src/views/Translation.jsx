@@ -1,6 +1,14 @@
+import TranslationForm from "../components/Translation/TranslationForm";
+
 const Translation = () => {
 
-    return (<h1>Translation Page</h1>);
+    return (
+        <>
+         <TranslationForm/>
+        </>
+   
+    
+    );
 }
 
 

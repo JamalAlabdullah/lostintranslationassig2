@@ -17,8 +17,19 @@ margin-top: 80px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
+.interUser{
+    color: white;
+    text-align: left;
+    margin-left: -120px;
+    
+}
+
+
+
+
 .inputText{
-    margin-top: 50px;
+    margin-top: 8px;
     font-size: small;
     font-weight:100;
     width: 215px;
@@ -43,17 +54,12 @@ input::placeholder {
 
 .btn.btn-primary{
     margin-top: 60px;
-   
     border-radius: 70px;
     padding-left: 50px;
     padding-right: 50px;
     background-color:blueviolet;
 }
 
-.forgetPassword{
-    color: white;
-    
-}
 
 
 .requiredInput{
@@ -64,4 +70,8 @@ input::placeholder {
 
 .loginLoading{
     color: aliceblue;
+}
+
+.forgetPassword{
+    color: white;  
 }
