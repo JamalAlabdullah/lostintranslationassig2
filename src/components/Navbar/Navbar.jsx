@@ -2,8 +2,11 @@ import { Link, NavLink} from "react-router-dom";
 import React from "react";
 import { useUser } from "../../context/UserContext";
 
-const Navbar= () => {
+ 
 
+
+
+const Navbar= () => {
 
   const {user} = useUser();
 
@@ -14,6 +17,7 @@ const Navbar= () => {
           <img className="logoImage" src={"./images/logo.png"} alt="logo Lost In Translation" />
           </Link>
           <h6 className="title">Lost In Translation</h6>
+   
           <div >
           </div>
           <button
@@ -29,9 +33,11 @@ const Navbar= () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
+          
               {/**<NavLink className="nav-link" aria-current="page" to="/"> Home</NavLink> */} 
              
              { user !== null &&
+          
               <React.Fragment>
               <NavLink className="nav-link " to="/translations">Translation</NavLink>
               <NavLink className="nav-link " to="/profile">Profile</NavLink>

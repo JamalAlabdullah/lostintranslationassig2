@@ -9,6 +9,7 @@ import './App.css';
 import './components/Login/LoginFormStyle.css';
 import './components/Navbar/NavbarStyle.css';
 import './components/Translation/TranslationStyle.css';
+import './components/Profile/ProfileStyle.css';
 
 
 

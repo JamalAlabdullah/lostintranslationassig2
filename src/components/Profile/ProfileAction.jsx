@@ -1,9 +1,12 @@
 const ProfileAction = () => {
     return (
         <>
-            <p>Actions</p>
-            <button>Logout</button>
-            <button>Translate</button>
+          
+          <div className="showBtn">
+            <button type="submit" className="btn btn-primary">Show translation</button>
+            </div>
+        
+
         </>
     )
 }
