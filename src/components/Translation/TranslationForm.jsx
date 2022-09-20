@@ -1,16 +1,28 @@
 import { useForm } from "react-hook-form"
 import { useUser } from "../../context/UserContext"
 import { translationAdd } from "../../api/translate"
+import { storageSave } from "../../utils/storage";
+import { STORAGE_KEY_USER } from "../../const/storageKey";
 
 const TranslationForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { user } = useUser();
+    const { user, setUser } = useUser();
 
-    const onSubmit = ({ toBeTranslated }) => {
-        translationAdd(user, toBeTranslated)
+    const onSubmit = async ({ toBeTranslated }) => {
+        const [error, updatedUser] = await translationAdd(user, toBeTranslated)
 
-        // send http request
+        if (error !== null)  {
+            return
+        }
+
+        // keep server state and ui state in sync
+        storageSave(STORAGE_KEY_USER, updatedUser);
+        // update context state
+        setUser(updatedUser);
+        
+        console.log(error);
+        console.log(updatedUser);
     }
     
     return (
