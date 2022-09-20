@@ -12,19 +12,18 @@ const TranslationForm = () => {
     const { user, setUser } = useUser()
 
     const onSubmit = async ({ toBeTranslated }) => {
+        
+        // manage local state and API state
         const [error, updatedUser] = await translationAdd(user, toBeTranslated)
 
         if (error !== null)  {
             return
         }
 
-        // keep server state and ui state in sync
         storageSave(STORAGE_KEY_USER, updatedUser);
-        // update context state
         setUser(updatedUser);
 
-        console.log(toBeTranslated)
-
+        // parse and manage user input
         let arr = []
         for (let i = 0; i < toBeTranslated.length; i++) {
             const letter = toBeTranslated[i];
@@ -40,7 +39,7 @@ const TranslationForm = () => {
                 <h3 className="welcomeMessage"> Welcome to translation page</h3>
                 <p className="enterLable"> Enter the word or phrase you want to translate into sign: </p>
             
-                {/*translate felt */}
+                {/*translate field */}
                 <form onSubmit={ handleSubmit(onSubmit) } >
                     <fieldset>
                         <label htmlFor="translation-notes">Input:</label>
@@ -63,7 +62,6 @@ const TranslationForm = () => {
             </div>
         </>
     );
-
 }
 
 export default TranslationForm;
