@@ -2,7 +2,15 @@ import withAuth from "../hoc/withAuth";
 
 const Profile = () => {
 
-    return (<h1>Profile Page</h1>);
+    const { user } = useUser()
+    return (
+        <section>
+            <h1>Profile Page</h1>
+            <ProfileHeader username={ user.username } />
+            <ProfileAction />
+            <ProfileTranslationHistory translations={ user.translations } />
+        </section>
+    );
 }
 
 
