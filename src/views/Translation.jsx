@@ -1,4 +1,5 @@
 import TranslationForm from "../components/Translation/TranslationForm";
+import withAuth from "../hoc/withAuth";
 
 const Translation = () => {
 
