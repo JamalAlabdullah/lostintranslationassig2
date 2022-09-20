@@ -1,7 +1,4 @@
-import ProfileHeader from "../components/Profile/ProfileHeader";
-import ProfileAction from "../components/Profile/ProfileAction";
-import ProfileTranslationHistory from "../components/Profile/ProfileTranslationHistory";
-import { useUser } from "../context/UserContext";
+import withAuth from "../hoc/withAuth";
 
 const Profile = () => {
 
@@ -18,4 +15,4 @@ const Profile = () => {
 
 
 
-export default Profile;
+export default  withAuth(Profile);
