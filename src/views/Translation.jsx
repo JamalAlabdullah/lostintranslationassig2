@@ -12,6 +12,4 @@ const Translation = () => {
     );
 }
 
-
-
 export default withAuth(Translation);

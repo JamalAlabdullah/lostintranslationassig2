@@ -4,8 +4,11 @@ const TranslationForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = data => {
-        console.log(data);
+    const onSubmit = ({ toBeTranslated }) => {
+        console.log(toBeTranslated);
+
+        // send http request
+        
     }
     
     return (
@@ -19,7 +22,7 @@ const TranslationForm = () => {
                     <fieldset>
                         <label htmlFor="translation-notes">Input:</label>
                         <div className="input-group mb-3">
-                            <input type="text" className="form-control" placeholder="Type..." { ...register("translationNotes") } />
+                            <input type="text" className="form-control" placeholder="Type..." { ...register("toBeTranslated") } />
                             <div className="input-group-append">
                                 <button className="btn btn-outline-primary" type="submit">Translate</button>
                             </div>
