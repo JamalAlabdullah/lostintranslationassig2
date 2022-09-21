@@ -43,9 +43,11 @@ const ProfileTranslationHistory = ({ translations }) => {
                         }
                     </div>
             </div>
+            { translationList.length > 0 && 
             <div className="deleteBtn">
                 <button type="submit" className="btn btn-primary" onClick={ handleDeleteTranslationsClick }>Delete Translations</button>
             </div>
+            }
         </>
     )
 }
