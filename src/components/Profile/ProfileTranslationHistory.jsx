@@ -6,33 +6,19 @@ const ProfileTranslationHistory = ({ translations }) => {
   
     return (
         <>
-
-
-<section>
-          
-          
-          
-        </section>
-          <div className="card1">
+            <div className="card1">
                 <div className="card-header">Translation history</div>
-                <div className="card-body">
-                <p>Here should the result of translation ....</p>
-                
-            <ul className="list-group list-group-flush">
-                { translationList }
-            </ul>
-           
-                
-            </div>
-            </div>
-           <div className="deleteBtn">
-            <button type="submit" className="btn btn-primary">Delete Translations</button>
-            </div>
-        
+                    <div className="card-body">
+                        <p>Here should the result of translation ....</p>
+                        <ul className="list-group list-group-flush">
+                            { translationList }
+                        </ul>
+                    </div>
+                </div>
+                <div className="deleteBtn">
+                    <button type="submit" className="btn btn-primary">Delete Translations</button>
+                </div>
         </>
-      
-
-        
     )
 }
 
