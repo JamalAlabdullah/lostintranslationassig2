@@ -4,10 +4,6 @@ export const storageSave = (key, value) => {
         throw new Error("storageSave: No storage key provided.")
     }
 
-    if (!value) {
-        throw new Error("storageSave: No value provided for " + key)
-    }
-
     localStorage.setItem(key, JSON.stringify(value))
 }
 
