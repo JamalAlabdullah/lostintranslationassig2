@@ -1,3 +1,4 @@
+
 .container{
     text-align: center;
     width: 500px;
@@ -58,3 +59,7 @@ text-emphasis: 55px;
    
 }
 
+.enterLable{
+    color: white;
+}
+    

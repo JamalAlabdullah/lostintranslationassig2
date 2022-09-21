@@ -42,9 +42,9 @@ const TranslationForm = () => {
                 {/*translate field */}
                 <form onSubmit={ handleSubmit(onSubmit) } >
                     <fieldset>
-                        <div className="input-group mb-3">
+                        <div className="input-group mb-3 animate__animated animate__lightSpeedInLeft">
                             <input type="text" className="form-control" placeholder="Type..." { ...register("toBeTranslated") } />
-                            <div className="input-group-append">
+                            <div className="input-group-append ">
                                 <button className="btn btn-outline-primary" type="submit">Translate</button>
                             </div>
                         </div>
@@ -52,7 +52,7 @@ const TranslationForm = () => {
                 </form>
 
                 {/*Results card */}
-                <div className="card">
+                <div className="card animate__animated animate__lightSpeedInRight">
                     <div className="card-header">The results for your translation</div>
                         <div className="card-body">
                             <TranslationSignList letters={ letterArr }/>

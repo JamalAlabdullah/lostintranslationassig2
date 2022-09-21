@@ -51,7 +51,7 @@ return (
     <div className="container">
     
     <img  className="image" src="./Images/logo.png" alt="Logo"></img><br></br>
-    <h3 className="welcomeMessage">Welcome To Lost In Translation</h3><br></br>
+    <h3 className="welcomeMessage animate__animated animate__backInDown">Welcome To Lost In Translation</h3><br></br>
    
     <form onSubmit={handleSubmit(onSubmit)}>
 
