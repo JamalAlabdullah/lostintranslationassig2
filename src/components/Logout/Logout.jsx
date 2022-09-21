@@ -10,7 +10,7 @@ const Logout = () => {
         storageSave(STORAGE_KEY_USER, null)
         setUser(null)
         window.location = "/"
-        }
+    }
 }
 
 
