@@ -24,6 +24,26 @@ export const translationAdd = async (user, translation) => {
     }
 }
 
-export const translationClearHistory = (userId) => {
+export const translationClearHistory = async (userId) => {
+    console.log("DEBUG", `${apiUrl}/${userId}`)
+    try {
+        const response = await fetch(`${apiUrl}/${userId}`, {
+            method: 'PATCH',
+            headers: createHeaders(),
+            body: JSON.stringify({
+                translations: []
+            })
+        })
 
+        if (!response.ok) {
+            throw new Error("Could not update list of translations")
+        }
+
+        const result = await response.json();
+        return [ null, result ]
+
+    } 
+    catch (error) {
+        
+    }
 }
