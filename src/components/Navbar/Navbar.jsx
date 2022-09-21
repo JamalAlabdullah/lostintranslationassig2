@@ -10,7 +10,7 @@ const Navbar= () => {
     return (
         <nav className="navbar navbar-expand-lg ">  
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/logout" >
+          <Link className="navbar-brand" to="/" >
           <img className="logoImage" src={"./images/logo.png"} alt="logo Lost In Translation" />
           </Link>
           <h6 className="title">Lost In Translation</h6>
