@@ -1,4 +1,3 @@
-import ProfileAction from "../components/Profile/ProfileAction";
 import ProfileHeader from "../components/Profile/ProfileHeader";
 import ProfileTranslationHistory from "../components/Profile/ProfileTranslationHistory";
 import { useUser } from "../context/UserContext";
@@ -11,7 +10,6 @@ const Profile = () => {
     return (
         <section>
             <ProfileHeader username={ user.username } />
-            <ProfileAction />
             <ProfileTranslationHistory translations={ user.translations } />
         </section>
     );
