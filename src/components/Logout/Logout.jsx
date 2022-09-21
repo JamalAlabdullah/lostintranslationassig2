@@ -6,11 +6,9 @@ import { useEffect } from "react";
 const Logout = () => {
     const { user, setUser } = useUser()
 
-    if (window.confirm("Are you sure you want to log out?")) {
-        storageSave(STORAGE_KEY_USER, null)
-        setUser(null)
-        window.location = "/"
-    }
+    storageSave(STORAGE_KEY_USER, null)
+    setUser(null)
+    window.location = "/"
 }
 
 
