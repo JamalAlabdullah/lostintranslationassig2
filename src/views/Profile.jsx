@@ -13,6 +13,7 @@ const Profile = () => {
     const { user, setUser } = useUser();
 
     useEffect(() => {
+        console.log("test")
         const findUser = async () => {
             const [ error, latestUser ] = await findUserById(user.id)
             
