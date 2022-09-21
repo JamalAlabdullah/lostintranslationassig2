@@ -2,13 +2,10 @@ import { Link, NavLink} from "react-router-dom";
 import React from "react";
 import { useUser } from "../../context/UserContext";
 
- 
-
-
 
 const Navbar= () => {
 
-  const {user} = useUser();
+  const { user } = useUser();
 
     return (
         <nav className="navbar navbar-expand-lg ">  
@@ -45,9 +42,6 @@ const Navbar= () => {
               </React.Fragment>
 
              }
-
-
-
             </div>
           </div>
         </div>
