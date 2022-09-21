@@ -10,8 +10,6 @@ const Profile = () => {
     const { user } = useUser();
     return (
         <section>
-          
-            
             <ProfileHeader username={ user.username } />
             <ProfileAction />
             <ProfileTranslationHistory translations={ user.translations } />

@@ -1,8 +1,8 @@
 import ProfileTranslationHistoryItem from "./ProfileTranslationHistoryItem"
 
 const ProfileTranslationHistory = ({ translations }) => {
-  
-    const translationList = translations.map(translation => <ProfileTranslationHistoryItem key={ translation } translation={ translation }/>)
+    console.log(translations);
+    const translationList = translations.slice(0, 10).map(translation => <ProfileTranslationHistoryItem key={ translation } translation={ translation }/>)
   
     return (
         <>
@@ -14,10 +14,10 @@ const ProfileTranslationHistory = ({ translations }) => {
                             { translationList }
                         </ul>
                     </div>
-                </div>
-                <div className="deleteBtn">
-                    <button type="submit" className="btn btn-primary">Delete Translations</button>
-                </div>
+            </div>
+            <div className="deleteBtn">
+                <button type="submit" className="btn btn-primary">Delete Translations</button>
+            </div>
         </>
     )
 }
