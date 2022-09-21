@@ -42,7 +42,6 @@ const TranslationForm = () => {
                 {/*translate field */}
                 <form onSubmit={ handleSubmit(onSubmit) } >
                     <fieldset>
-                        <label htmlFor="translation-notes">Input:</label>
                         <div className="input-group mb-3">
                             <input type="text" className="form-control" placeholder="Type..." { ...register("toBeTranslated") } />
                             <div className="input-group-append">
