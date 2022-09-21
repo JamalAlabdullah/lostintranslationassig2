@@ -4,7 +4,7 @@ const TranslationSignList = ({ letters }) => {
 
     return (
         <ul>
-            { letters.map((letter, index) => <TranslationSignListItem letter={ letter } key={ index} />) }
+            { letters.map((letter, index) => <TranslationSignListItem letter={ letter } key={ index } />) }
         </ul>
     )
 }
