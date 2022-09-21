@@ -33,12 +33,14 @@ const ProfileTranslationHistory = ({ translations }) => {
     return (
         <>
             <div className="card1">
-                <div className="card-header">Translation history</div>
+                <div className="card-header">Translation History</div>
                     <div className="card-body">
-                        <p>Here should the result of translation ....</p>
+                        { translationList.length === 0 && <p>You have no translation history!</p>}
+                        { translationList.length > 0 && 
                         <ul className="list-group list-group-flush">
                             { translationList }
                         </ul>
+                        }
                     </div>
             </div>
             <div className="deleteBtn">
