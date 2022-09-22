@@ -4,11 +4,11 @@ const packageJson = require('./package.json')
 
 // Middleware
 app.use(requireHTTPS);
-app.use(express.static('./build/'));
+app.use(express.static('./build/' + packageJson.name));
 
 // Redirect app request to build/index.html
 app.get('/*', (req, res) => {
-  res.sendFile('index.html', {root: 'build/'});
+  res.sendFile('index.html', {root: 'build/' + packageJson.name});
 });
 
 // Start server
