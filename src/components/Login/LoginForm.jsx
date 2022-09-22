@@ -69,12 +69,7 @@ return (
     {loading && <p className='loginLoading'>Logging in...</p>}<br></br>
     {apiError && <p>{apiError}</p>}<br></br>
 
-    </form>
-
-    <p className="forgetPassword">Forget Password? Reset</p><br></br>
-   
-
-
+    </form>   
     </div>
 )
 
